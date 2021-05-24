@@ -13,7 +13,24 @@ from .person import Person, State
 
 
 class Area:
+    """Area class
+
+    Area to perform the simulation
+    """
+
     def __init__(self, n_persons, n_infected, max_step, size, infection_radius, update_interval):
+        """Area constructor
+
+        Constructs an Area object
+
+        Args:
+            n_persons (int): Number of persons in the simulation
+            n_infected (int): Number of infected persons in the simulation
+            max_step (float): Move step modifier
+            size (int): Maximum area size
+            infection_radius (int): Contamination radius
+            update_interval (int): Animation time step
+        """
         self.persons = [Person(np.random.uniform(size, size=2))
                         for p in range(n_persons)]
 
@@ -35,6 +52,11 @@ class Area:
             Line2D([0], [0], marker='o', color='w', label='Dead', markerfacecolor="#000000", markersize=10)]
 
     def update(self):
+        """Area update
+
+        Updates the area and each person within
+        Also check for new infections
+        """
         for p in self.persons:
             p.update(self.max_step)
             if p.state == State.INFECTED:
@@ -48,6 +70,16 @@ class Area:
                                 list(State), weights=[0, 0.1, 0.8, 0])[0]
 
     def color(self, state: State) -> str:
+        """Area color
+
+        Check the color to plot by the Person's State
+
+        Args:
+            state (State): Person's state
+
+        Returns:
+            str: Color in HEX
+        """
         if state == State.HEALTHY:
             return "#00ff00"  # green
         elif state == State.INFECTED:
@@ -58,6 +90,10 @@ class Area:
             return "#000000"  # black
 
     def plot(self):
+        """Area plot
+
+        Plot the area and starts the animation
+        """
         fig, ax = plt.subplots()
         ax.set_title("Covid-19 Progression Simulation")
         ax.set_xlabel("X Position")
@@ -86,6 +122,19 @@ class Area:
         plt.show()
 
     def animate(self, frame, area, ax, scatter):
+        """Area animate
+
+        Area plot animation function
+
+        Args:
+            frame (int): Current animation frame
+            area (Area): Area object
+            ax (Axes): Axes from the animation
+            scatter : Graph from the animation
+
+        Returns:
+            Graph to plot
+        """
         self.update()
 
         x_values = np.array([])

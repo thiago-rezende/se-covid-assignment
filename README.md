@@ -22,7 +22,6 @@
 # Libraries Included
  - [NumPy][numpy-url]
  - [Matplotlib][matplotlib-url]
- - [Jupyter][jupyter-url]
 
 # Project structure
 ```
@@ -37,9 +36,8 @@
 
 <!-- Links -->
 [python-url]: https://www.python.org/
-[matplotlib-url]: https://github.com/gabime/spdlog
-[numpy-url]: https://github.com/catchorg/Catch2
-[jupyter-url]: https://jupyter.org/
+[matplotlib-url]: https://matplotlib.org/
+[numpy-url]: https://numpy.org/
 
 <!-- Badges -->
 [license-badge]: https://img.shields.io/github/license/thiago-rezende/se-covid-assignment?style=flat-square
