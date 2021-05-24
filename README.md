@@ -34,6 +34,28 @@
  └── Pipfile.lock                    # Pipenv lock file.
 ```
 
+# Instructions
+> Clone the repo
+```sh
+  git clone https://github.com/thiago-rezende/se-covid-assignment.git
+  cd se-covid-assignment
+```
+
+> Install pipenv
+```sh
+  pip install pipenv
+```
+
+> Install dependencies
+```sh
+  pipenv install
+```
+
+> Run the application
+```sh
+  pipenv run python main.py
+```
+
 <!-- Links -->
 [python-url]: https://www.python.org/
 [matplotlib-url]: https://matplotlib.org/
